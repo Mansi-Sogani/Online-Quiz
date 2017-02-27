@@ -1,0 +1,79 @@
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+<header align="center">
+    <br><h1>Online Quiz</h1>
+</header>
+	<div style="border: solid 2px; position: absolute; width: 900px; height: 400px; top: 42%; left: 23%; margin-top: -200px; margin-left: -100px;">
+		<div style="border: solid 0px; position: absolute; background-color: grey; width: 900px; height: 40px;">
+			<p style="position: absolute; top: -10%; left: 40%;">Question 4</p>
+		</div>
+		<p style="position: absolute; top: 10%; left: 6%;">Watch the video and answer the following question.</p>
+		<p style="position: absolute; top: 14%; left: 6%;">What is the esource as mentioned in the video?</p>
+		<div style="left: 15%; width: 80%; float: left;">
+			<div style="position: absolute; top: 30%; left: 8%; width: 25%; float: left">
+				<input type="radio" id="A" name="Question1" value="A">NASA.gov<br>
+				<br> <br> <br> <br>
+				<input type="radio" id="C" name="Question1" value="C">Facebook<br>
+			</div>
+
+			<div style="position: absolute; top: 29%; right: 40%; width: 25%; float: right">
+				<input type="radio" id="B" name="Question1" value="B">Data.gov<br>
+				<br> <br> <br> <br> 
+				<input type="radio" id="D" name="Question1" value="D">XYZ.net<br>
+			</div>
+
+			<div style="position: absolute; top: 65%; left: 5%; width: 25%; float: left">
+				<button type="submit" style="width: 60%" onclick="video()" value="Submit">Submit & Next Question</button>
+			</div>
+
+			<div style="position: absolute; top: 65%; right: 45%; width: 25%; float: right">
+				<button type="reset" style="width: 60%"  value="Cancel">Cancel & Clear Question</button>
+			</div>
+		</div>
+
+		<div style="position: absolute; top: -10%; left: 450px">
+			<video width="400" height="500" autoplay loop class="embed-responsive-item videoalign">
+        		<source src="Data/video.mp4" type="video/mp4">
+   			</video>
+		</div>
+		<script>
+			function video() {
+				var optionA = document.getElementById("A");
+				var optionB = document.getElementById("B");
+				var optionC = document.getElementById("C");
+				var optionD = document.getElementById("D");
+				var correctans;
+				if (optionA.checked) {
+					correctans = optionA.value;
+				}
+				else if (optionB.checked) {
+					sessionStorage.setItem('points', 0);
+					correctans = optionB.value;
+				}
+				else if (optionC.checked) {
+					sessionStorage.setItem('points', 0);
+					correctans = optionC.value;
+				}
+				else if (optionD.checked) {
+					sessionStorage.setItem('points', 0);
+					correctans = optionD.value;
+				}
+				var abc = window.location.href;
+				var points = abc.substring(abc.indexOf("=") + 1);
+				if (correctans == "A") {
+					window.location.href = "Survey.html?points=" + points + "," + 50;
+				}
+				else if (correctans == "B" || correctans == "C" || correctans == "D") {
+					window.location.href = "Survey.html?points=" + points + "," + 0;
+				}
+			}
+		</script>
+	</div>
+	<div style="position:absolute;top:95%;left:47%;width:25%;height: 25px;"> 
+		<footer> Copyright </footer>
+	</div>
+</body>
+</html>

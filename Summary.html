@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>Score Card</title>
+</head>
+
+<body>
+<header align="center">
+    <br><h1>Online Quiz</h1>
+</header>
+	<div style="border: solid 2px; position: absolute; width: 900px; height: 550px; top: 40%; left: 24%; margin-top: -200px; margin-left: -100px;">
+		<div style="border: solid 0px; position: absolute; background-color: grey; width: 900px; height: 40px;">
+			<p style="position: absolute; top: -10%; left: 45%;">Score Card</p>
+		</div>
+		<div onclick="scorecard()" style="border: solid 1px; position: absolute; width: 700px; height: 450px; top: 44%; left:23%; margin-top: -200px; margin-left: -100px;">
+		<br><details>
+				<summary>Quantitative Section</summary>
+				<p><b>Number of Questions Answered: 2<br>
+				Number of Correct Answered: <span id="A"></span><br>
+				Score: <span id="B"></span><br></b></p>
+		</details><br>
+		<details>
+				<summary>Reading Section</summary>
+				<p><b>Number of Questions Answered: 1<br>
+				Number of Correct Answered: <span id="C"></span><br>
+				Score: <span id="D"></span><br></b></p>
+		</details><br>
+		<details>
+				<summary>Audio/Video Section</summary>
+		 		<p><b>Number of Questions Answered: 1<br>
+				Number of Correct Answered: <span id="E"></span><br>
+				Score: <span id="F"></span><br></b></p>
+		</details> <br>
+		</div>
+		<script>
+			var url = window.location.href;
+			var points = (url.substring(url.indexOf("=") + 1));
+			var score = points.split(",");
+			
+			function scorecard() {
+				document.getElementById("A").innerHTML = score[0] / 50;
+				document.getElementById("B").innerHTML = score[0];
+				document.getElementById("C").innerHTML = score[1] / 50;
+				document.getElementById("D").innerHTML = score[1];
+				document.getElementById("E").innerHTML = score[2] / 50;
+				document.getElementById("F").innerHTML = score[2];
+			}
+			function signout() {
+				window.location.href = "login.html";
+			}
+		</script>
+		<p style="position: absolute; top: 75%; right: 40%"><b>Thank You!!</b></p>
+		<div style="position:absolute;top:85%;left:47%;width:25%;height: 25px;"> 
+			<button type="submit" value="Submit" style="width: 70%" onclick="signout()">Finish</button>
+		</div>
+	</div>
+	<div style="position:absolute;top:95%;left:47%;width:25%;height: 25px;"> 
+			<footer> Copyright </footer>
+		</div>
+	
+</body>
+</html>

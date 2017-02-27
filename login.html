@@ -1,0 +1,51 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<style>
+
+</style>
+<body>
+<header align="center">
+    <br><h1>Online Quiz</h1>
+</header>
+	<div style="border: solid 3px; position: absolute; width: 420px; height: 300px; top: 50%; left: 50%; margin-top: -200px; margin-left: -200px;">
+		<div
+			style="border: solid 0px; position: absolute; background-color: grey; width: 420px; height: 40px;">
+			<p style="position: absolute; top: -10%; left: 40%;">User Login</p>
+		</div>
+		<form onsubmit="signin()" action="QuestionNumberOne.html">
+		<div style="position: absolute; top: 24%; right: 77%; width: 10%; float: left">
+			
+				<label>Username: </label>
+					<input type="text" id="uname" style="font-size: 18pt">
+				<br><br>
+				<label>Password: </label>
+					<input type="password" id="pass" style="font-size: 18pt">
+		
+		</div>
+		<div style="position: absolute; top: 70%; right: 42%; width: 45%; float: right">
+			<p style="color: blue">Create Account or Forgot?</p>
+		</div>
+		<div style="position: absolute; top: 75%; right: 8%; width: 25%; float: right">
+			<input type="submit" value="Signin" style="height: 550px; color: green; width: 80px; font-size: 25pt;">
+		</div>
+		</form>
+		<script>
+		function signin() {
+			var uname = document.getElementById("uname").value;
+			var pass = document.getElementById("pass").value;
+			if(uname=="mansi" && pass=="sogani") {
+				
+				return true;
+			}
+			else
+				return false;
+		}
+		</script>
+	</div>
+	<div style="position:absolute;top:95%;left:47%;width:25%;height: 25px;"> 
+		<footer> Copyright </footer>
+	</div>
+</body>
+</html>
